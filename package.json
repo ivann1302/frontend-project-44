@@ -4,7 +4,7 @@
   "description": "[![Actions Status](https://github.com/ivann1302/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/ivann1302/frontend-project-44/actions)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "module"
   },
   "author": "",
   "license": "ISC"
