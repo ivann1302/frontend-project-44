@@ -6,6 +6,9 @@
   "scripts": {
     "test": "module"
   },
+   "bin": {
+	    "brain-games": "bin/brain-games.js"
+  },
   "author": "",
   "license": "ISC"
 }
