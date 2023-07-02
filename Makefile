@@ -11,7 +11,10 @@ brain-calc: 	# запуск игры brain-calc
 	node bin/brain-calc.js
 
 brain-gcd:		# запуск игры brain-gcd
-	node/brain-calc.js
+	node bin/brain-calc.js
+
+brain-progression:		# запуск игры brain-progression
+	node bin/brain-progression.js
 
 publish:	# публикация пакета
 	npm publish --dry-run

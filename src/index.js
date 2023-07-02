@@ -3,6 +3,9 @@ let userName;
 let firstRandomNumber;
 let secondRandomNuber;
 let sign;
+let hideOfProgression;
+let stepOfProgression;
+let hidenNum;
 let resultOfCorrectAnswer;
 let isGameOver;
 
@@ -27,6 +30,9 @@ const rulesOfGame = (nameGame) => {
         case 'brain-gcd' :
             console.log('Find the greatest common divisor given numbers.');
             break;
+        case 'brain-progression' :
+            console.log('What number is missing in the progression?');
+            break;
     }
 }
 
@@ -37,6 +43,7 @@ function getRandom(min, max) {
     return Math.floor(Math.random() * (maxCopy - minCopy)) + minCopy;
 };
 
+// Функция вывода рандомного знака
 const getMathSign = () => {
     const arr = ['+', '-', '*'];
     const i = Math.floor(Math.random() * arr.length);
@@ -44,7 +51,23 @@ const getMathSign = () => {
     return operator;
 };
 
-// функция, задающая вопрос юзеру
+// Функция вывода прогрессии с загаданным числом
+const getProgression = () => {
+    const num = getRandom(0, 30);
+    const arr = [];
+    stepOfProgression = getRandom(0, 10)
+    let progression = num;
+    hideOfProgression = getRandom(0,10)
+    for (let i =0; i < 10; i += 1) {
+        arr[i] = progression;
+        progression += stepOfProgression;
+    }
+    hidenNum = arr[hideOfProgression]
+    arr[hideOfProgression] = '..'
+    return arr.join();
+};
+
+// Функция, задающая вопрос юзеру
 const question = (nameGame) => {
     firstRandomNumber = getRandom(2, 100);
     secondRandomNuber = getRandom(2, 100);
@@ -59,6 +82,9 @@ const question = (nameGame) => {
             break;   
         case 'brain-gcd' :
             console.log(`Question: ${firstRandomNumber} ${secondRandomNuber}`);
+            break;
+        case 'brain-progression' :
+            console.log(`Question: ${getProgression()}`);
             break;
     }    
 }
@@ -111,6 +137,8 @@ const correctAnswer = (nameGame) => {
         case 'brain-gcd' :
             brainGcdCorrectAnswer(firstRandomNumber, secondRandomNuber);
             break;
+        case 'brain-progression' :
+            resultOfCorrectAnswer = hidenNum;
     }
 
 
@@ -129,7 +157,7 @@ const compareOfAnswer = (nameGame) => {
     if (answer === userAnswer) {
         textOfcorrectAnswer();
     } else {
-        console.log(`${userAnswer} ${'is wrong answer ;(. Correct answer was'} ${answer}.\n${"Let's try again,"} ${getUsersName()}!`);
+        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was' '${answer}'.\n${"Let's try again,"} ${getUsersName()}!`);
         isGameOver = 'true';
     }
 };
