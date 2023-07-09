@@ -2,10 +2,12 @@
 [![Actions Status](https://github.com/ivann1302/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/ivann1302/frontend-project-44/actions)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/cbdc9ebd462d36bd394a/maintainability)](https://codeclimate.com/github/ivann1302/frontend-project-44/maintainability)
+
+
 **Данный проект представляет собой консольную версию игр,где пользователю необходимо правильно ответить на 3 вопроса в зависимости от названия игры**
 
-**brain-calc:*
-необходимо определить является ли число четным https://asciinema.org/a/NSYI6tzspBLCN1y8gd7GUOIoy
+*brain-calc:*
+ Необходимо определить является ли число четным https://asciinema.org/a/NSYI6tzspBLCN1y8gd7GUOIoy
 
 *brain-calc:*
 
