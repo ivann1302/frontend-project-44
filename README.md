@@ -12,7 +12,7 @@
 
 *brain-calc:*
 
-Необходимо высчитать разницу,сумму или произведение двух чисел https://asciinema.org/a/cWraW38ZrsVc33HXMXPwQDRPq
+Необходимо высчитать разницу, сумму или произведение двух чисел https://asciinema.org/a/cWraW38ZrsVc33HXMXPwQDRPq
 
 *brain-gcd:*
 
