@@ -6,6 +6,7 @@ let sign;
 let hideOfProgression;
 let stepOfProgression;
 let hidenNum;
+let isNumPrime;
 let resultOfCorrectAnswer;
 let isGameOver;
 
@@ -24,6 +25,9 @@ const rulesOfGame = (nameGame) => {
         case 'brain-game': 
             console.log('Answer "yes" if the number is even, otherwise answer "no".');
             break;
+        case 'brain-even' :
+            console.log('Answer "yes" if the number is even, otherwise answer "no".');
+            break;
         case 'brain-calc' :
             console.log('What is the result of Expression?');
             break;
@@ -32,6 +36,9 @@ const rulesOfGame = (nameGame) => {
             break;
         case 'brain-progression' :
             console.log('What number is missing in the progression?');
+            break;
+        case 'brain-prime' :
+            console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
             break;
     }
 }
@@ -58,7 +65,7 @@ const getProgression = () => {
     stepOfProgression = getRandom(0, 10)
     let progression = num;
     hideOfProgression = getRandom(0,10)
-    for (let i =0; i < 10; i += 1) {
+    for (let i = 0; i < 10; i += 1) {
         arr[i] = progression;
         progression += stepOfProgression;
     }
@@ -81,12 +88,16 @@ const question = (nameGame) => {
             questionResult = console.log(`Question: ${firstRandomNumber} ${sign} ${secondRandomNuber}`);
             break;   
         case 'brain-gcd' :
-            console.log(`Question: ${firstRandomNumber} ${secondRandomNuber}`);
+            questionResult = console.log(`Question: ${firstRandomNumber} ${secondRandomNuber}`);
             break;
         case 'brain-progression' :
-            console.log(`Question: ${getProgression()}`);
+            questionResult = console.log(`Question: ${getProgression()}`);
+            break;
+        case 'brain-prime' :
+            questionResult = console.log(`Question: ${firstRandomNumber}`);
             break;
     }    
+    return questionResult;
 }
 
 // Функция получения ответа от пользователя
@@ -125,6 +136,15 @@ const brainGcdCorrectAnswer = (num1, num2) => {
     return resultOfCorrectAnswer;
 };
 
+// Функция проверяет является ли число простым
+const brainPrimeCorrectAnswer = (num) => {
+    for (let i = 2; i < num; i += 1) {
+        if (num % i === 0) {
+            return 'no';
+        }
+    } return 'yes';
+};
+
 // Функция определения правильного ответа в зависимости от названия игры
 const correctAnswer = (nameGame) => {
     switch (nameGame) {
@@ -139,10 +159,11 @@ const correctAnswer = (nameGame) => {
             break;
         case 'brain-progression' :
             resultOfCorrectAnswer = hidenNum;
-    }
-
-
-    return resultOfCorrectAnswer.toString();
+            break;
+        case 'brain-prime' :
+            resultOfCorrectAnswer = brainPrimeCorrectAnswer(firstRandomNumber);
+            break;
+    } return resultOfCorrectAnswer.toString();
 };
 
 // Функция с выводом текста правильного ответа
@@ -165,7 +186,7 @@ const compareOfAnswer = (nameGame) => {
 // Функция запуска игры с количеством раундов равным 3
 const runGameWithCounter = (nameGame) => {
     greetings();
-    rulesOfGame();
+    rulesOfGame(nameGame);
     const count = 3;
     let i = 0;
     while (i < count && isGameOver !== 'true') {
