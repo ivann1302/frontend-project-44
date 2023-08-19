@@ -197,7 +197,7 @@ const runGameWithCounter = (nameGame) => {
     }
 
     if (i === 3 & isGameOver !== 'true') {
-        console.log(`Congradtulations, ${getUsersName()}!`);
+        console.log(`Congratulations, ${getUsersName()}!`);
     }
 }
 
