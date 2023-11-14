@@ -29,7 +29,7 @@ const rulesOfGame = (nameGame) => {
             console.log('Answer "yes" if the number is even, otherwise answer "no".');
             break;
         case 'brain-calc' :
-            console.log('What is the result of Expression?');
+            console.log('What is the result of expression?');
             break;
         case 'brain-gcd' :
             console.log('Find the greatest common divisor given numbers.');
@@ -178,7 +178,7 @@ const compareOfAnswer = (nameGame) => {
     if (answer === userAnswer) {
         textOfcorrectAnswer();
     } else {
-        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was' '${answer}'.\n${"Let's try again,"} ${getUsersName()}!`);
+        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was: '${answer}'.\n${"Let's try again,"} ${getUsersName()}!`);
         isGameOver = 'true';
     }
 };
