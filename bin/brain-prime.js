@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import runGame from '../src/index.js';
+import runGameWithCounter from '../src/index.js';
 
 // Импортированаая функция запуска игры со счетчиком
-runGame('brain-prime');
+runGameWithCounter('brain-prime');

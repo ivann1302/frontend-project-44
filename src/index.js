@@ -6,7 +6,6 @@ let sign;
 let hideOfProgression;
 let stepOfProgression;
 let hidenNum;
-let isNumPrime;
 let resultOfCorrectAnswer;
 let isGameOver;
 
@@ -195,10 +194,9 @@ const runGameWithCounter = (nameGame) => {
         compareOfAnswer(nameGame);
         i += 1;
     }
-
     if (i === 3 & isGameOver !== 'true') {
         console.log(`Congratulations, ${getUsersName()}!`);
     }
-}
+};
 
 export default runGameWithCounter;
