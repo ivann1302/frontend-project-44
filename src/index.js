@@ -100,7 +100,7 @@ const question = (nameGame) => {
       break;
     default:
 // do noghing
-  }    
+  }
   return questionResult;
 };
 
