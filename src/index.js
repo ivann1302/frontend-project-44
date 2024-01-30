@@ -22,7 +22,7 @@ const getUsersName = () => userName;
 // Функция описания правил игры
 const rulesOfGame = (nameGame) => {
   switch (nameGame) {
-    case 'brain-game': 
+    case 'brain-game':
       console.log('Answer "yes" if the number is even, otherwise answer "no".');
       break;
     case 'brain-even':
@@ -40,6 +40,8 @@ const rulesOfGame = (nameGame) => {
     case 'brain-prime':
       console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
       break;
+    default:
+// do noghing
   }
 };
 
@@ -48,7 +50,7 @@ function getRandom(min, max) {
   const minCopy = Math.ceil(min);
   const maxCopy = Math.floor(max);
   return Math.floor(Math.random() * (maxCopy - minCopy)) + minCopy;
-};
+}
 
 // Функция вывода рандомного знака
 const getMathSign = () => {
@@ -64,7 +66,7 @@ const getProgression = () => {
   const arr = [];
   stepOfProgression = getRandom(0, 10);
   let progression = num;
-  hideOfProgression = getRandom(0,10)
+  hideOfProgression = getRandom(0, 10);
   for (let i = 0; i < 10; i += 1) {
     arr[i] = progression;
     progression += stepOfProgression;
@@ -86,7 +88,7 @@ const question = (nameGame) => {
       break;
     case 'brain-calc':
       questionResult = console.log(`Question: ${firstRandomNumber} ${sign} ${secondRandomNuber}`);
-      break;   
+      break;
     case 'brain-gcd':
       questionResult = console.log(`Question: ${firstRandomNumber} ${secondRandomNuber}`);
       break;
@@ -96,8 +98,10 @@ const question = (nameGame) => {
     case 'brain-prime':
       questionResult = console.log(`Question: ${firstRandomNumber}`);
       break;
+    default:
+// do noghing
   }    
-    return questionResult;
+  return questionResult;
 };
 
 // Функция получения ответа от пользователя
@@ -122,12 +126,12 @@ const brainCalcCorrectAnswer = (num1, num2) => {
   } else {
     resultOfCorrectAnswer = num1 * num2;
   }
-   return resultOfCorrectAnswer;
+  return resultOfCorrectAnswer;
 };
 
 // Функция расчета правильного ответа для игры brain-gcd
 const brainGcdCorrectAnswer = (num1, num2) => {
-  const min = Math.min(num1, num2)
+  const min = Math.min(num1, num2);
   for (let i = 0; i <= min; i += 1) {
     if (num1 % i === 0 && num2 % i === 0) {
       resultOfCorrectAnswer = i;
@@ -163,15 +167,17 @@ const correctAnswer = (nameGame) => {
     case 'brain-prime':
       resultOfCorrectAnswer = brainPrimeCorrectAnswer(firstRandomNumber);
       break;
+    default:
+// do nothing
   } return resultOfCorrectAnswer.toString();
 };
 
 // Функция с выводом текста правильного ответа
 const textOfcorrectAnswer = () => {
-    console.log('Correct!');
+  console.log('Correct!');
 };
 
-  // Функция сравнения правильного результата с результатом юзера
+// Функция сравнения правильного результата с результатом юзера
 const compareOfAnswer = (nameGame) => {
   const userAnswer = getUsersAnswer();
   const answer = correctAnswer(nameGame);
