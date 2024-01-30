@@ -70,7 +70,7 @@ const getProgression = () => {
     }
     hidenNum = arr[hideOfProgression]
     arr[hideOfProgression] = '..'
-    return arr.join();
+    return arr.join(' ');
 };
 
 // Функция, задающая вопрос юзеру
