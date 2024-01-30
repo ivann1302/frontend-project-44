@@ -28,7 +28,7 @@ const rulesOfGame = (nameGame) => {
             console.log('Answer "yes" if the number is even, otherwise answer "no".');
             break;
         case 'brain-calc' :
-            console.log('What is the result of expression?');
+            console.log('What is the result of the expression?');
             break;
         case 'brain-gcd' :
             console.log('Find the greatest common divisor given numbers.');
