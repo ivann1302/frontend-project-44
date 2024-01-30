@@ -31,7 +31,7 @@ const rulesOfGame = (nameGame) => {
             console.log('What is the result of the expression?');
             break;
         case 'brain-gcd' :
-            console.log('Find the greatest common divisor given numbers.');
+            console.log('Find the greatest common divisor of given numbers.');
             break;
         case 'brain-progression' :
             console.log('What number is missing in the progression?');
